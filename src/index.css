@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Gowun Dodum", "Inter", system-ui, -apple-system, sans-serif;
+  --color-beige: #f5f0eb;
+  --color-navy: #1a2744;
+  --color-orange: #f97316;
+}
+
+body {
+  background-color: var(--color-beige);
+  color: #1f2937;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom rounded-feel smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ebd9;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5bba3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ac9e84;
+}
