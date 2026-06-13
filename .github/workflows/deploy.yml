@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 또는 master (사용자의 기본 브랜치 수동 확인 필요 시)
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node 💻
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          # GitHub Pages는 정적 사이트이므로 프론트엔드 빌드만 진행하거나 전체 빌드를 수행합니다.
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # 빌드 결과물이 저장되는 폴더
+          branch: gh-pages # 배포될 깃허브 브랜치 (GitHub Pages 설정에서 gh-pages를 선택하면 됩니다)
