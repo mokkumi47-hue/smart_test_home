@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/smart_test_home/',
+    base: './', // ◀ 상대 경로로 배포 경로를 유연하게 찾아가도록 설정 추가 완료!
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
