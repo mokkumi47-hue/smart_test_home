@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/smart_test_home/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
