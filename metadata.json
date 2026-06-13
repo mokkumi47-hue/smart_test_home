@@ -1,6 +1,6 @@
 {
-  "name": "시험지 분석기",
-  "description": "시험지 사진을 업로드하면 AI가 자동으로 채점하고 채점 분석, 오답 리포트, 그리고 유사한 핵심 맞춤 문제를 제공합니다.",
+  "name": "smart-test-home",
+  "description": "Exam analysis applet powered by Gemini",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
